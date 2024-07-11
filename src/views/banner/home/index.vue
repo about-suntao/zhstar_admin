@@ -62,11 +62,11 @@
                 @change="getTableData"
             />
         </div>
-        <el-dialog v-model="Popup" title="新增" width="650">
+        <el-dialog v-model="Popup" :title="PopupStatus === 'add' ? '新增' : '编辑'" width="650">
             <div class="e_body">
                 <el-form :model="userForm" ref="ruleFormRef" :rules="rules" label-width="80">
                     <el-form-item label="标题:" prop="name">
-                        <el-input v-model="userForm.name" placeholder="请输入用户名" />
+                        <el-input v-model="userForm.name" placeholder="请输入标题" />
                     </el-form-item>
                     <el-form-item label="排序:" prop="sort">
                         <el-input v-model.number="userForm.sort" placeholder="从小到大排序，仅限数字" />
@@ -99,12 +99,12 @@
     import { reactive, ref, onMounted } from 'vue'
     import { uploadImg } from '@/axios/commonHttps'
     import { getHomeSwiper, addHomeSwiper, editHomeSwiper, delHomeSwiper } from '../banner.ts'
+    import type { UploadRequestOptions, FormRules } from 'element-plus'
 
     const tableData = ref([])
 
     const searchParams = reactive({
-        title: null,
-        typeId: null,
+        name: null,
         pageNum: 1,
         pageSize: 10,
         total: 0,
@@ -137,7 +137,7 @@
     })
 
     const getTableData = () => {
-        getHomeSwiper(searchParams).then((res) => {
+        getHomeSwiper(searchParams).then((res: any) => {
             if (res.code) {
                 tableData.value = res.data.list
                 searchParams.total = res.data.total
@@ -160,6 +160,7 @@
         }
         PopupStatus.value = 'add'
         Popup.value = true
+        ruleFormRef.value?.clearValidate()
     }
 
     const uploadPicture = (params: UploadRequestOptions) => {
@@ -222,7 +223,10 @@
             },
         })
     }
-    const clearSearch = () => {}
+    const clearSearch = () => {
+        searchParams.name = null
+        getTableData()
+    }
 
     const submitForm = () => {
         if (!ruleFormRef.value) return

@@ -24,12 +24,12 @@ export const delHomeSwiper = (params: any) => {
 
 // 其他
 
-// 新增
+// 查询
 export const getOtherBanner = (params: any) => {
-    return http.get('/icon/slideshow/queryByPage', params)
+    return http.get('/icon/menu/queryByPage', params)
 }
 
 // 修改
 export const editOtherBanner = (params: any) => {
-    return http.put('/icon/slideshow/edit', params)
+    return http.put('/icon/menu/edit', params)
 }

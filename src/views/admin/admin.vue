@@ -70,7 +70,7 @@
                 @change="getTableData"
             />
         </div>
-        <el-dialog v-model="Popup" title="新建管理员" width="550">
+        <el-dialog v-model="Popup" :title="PopupStatus === 'add' ? '新建管理员' : '编辑管理员'" width="550">
             <div class="e_body">
                 <el-form :model="userForm" ref="ruleFormRef" :rules="rules" label-width="70">
                     <el-form-item label="用户名:" prop="name">
@@ -166,6 +166,7 @@
         }
         PopupStatus.value = 'add'
         Popup.value = true
+        ruleFormRef.value?.clearValidate()
     }
 
     const openEditPopup = (data: any) => {
