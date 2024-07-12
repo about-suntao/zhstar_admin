@@ -55,3 +55,29 @@ export const getNewsDetail = (id: any) => {
 export const editNews = (params: any) => {
     return http.put('/icon/news/edit', params)
 }
+
+//国旗下讲话
+
+// 查询
+export const getArticle = (params: any) => {
+    return http.get('/icon/lecture/queryByPage', params)
+}
+
+export const getArticleDetail = (params: any) => {
+    return http.get(`/icon/lecture/${params}`)
+}
+
+// 新增
+export const addArticle = (params: any) => {
+    return http.post('/icon/lecture/add', params)
+}
+
+// 修改
+export const editArticle = (params: any) => {
+    return http.put('/icon/lecture/edit', params)
+}
+
+// 删除
+export const delArticle = (params: any) => {
+    return http.del(`/icon/lecture/deleteById?id=${params}`)
+}

@@ -74,6 +74,16 @@ const MenuRouter: Array<RouteRecordRaw> = [
                     hidden: false,
                 },
             },
+            {
+                path: 'speak',
+                name: 'speak',
+                component: () => import('@/views/news/speak/speak.vue'),
+                meta: {
+                    title: '国旗下讲话',
+                    icon: 'Odometer',
+                    hidden: false,
+                },
+            },
         ],
     },
     {

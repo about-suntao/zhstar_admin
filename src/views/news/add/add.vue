@@ -41,24 +41,11 @@
                         <el-form-item label="发布时间：" prop="createTime">
                             <el-date-picker v-model="form.createTime" type="date" placeholder="请选择文章发布时间" />
                         </el-form-item>
-                        <el-form-item label="是否热门:" prop="isHot">
-                            <el-radio-group v-model="form.isHot">
-                                <el-radio :label="1">是</el-radio>
-                                <el-radio :label="0">否</el-radio>
-                            </el-radio-group>
-                        </el-form-item>
                     </el-col>
                     <el-col :span="2"> </el-col>
                     <el-col :span="10">
                         <el-form-item label="关键字：" prop="keywords">
                             <el-input v-model="form.keywords" placeholder="请输入文章关键字" clearable />
-                        </el-form-item>
-                        <el-form-item label="浏览数：" prop="viewCount">
-                            <el-input
-                                v-model.number="form.viewCount"
-                                placeholder="请输入文章浏览数,不输入为默认"
-                                clearable
-                            />
                         </el-form-item>
                         <el-form-item label="封面：" prop="picture">
                             <el-upload class="avatar-uploader" :show-file-list="false" :http-request="uploadPicture">
@@ -127,9 +114,7 @@
         description: '',
         content: '',
         typeId: null,
-        isHot: '0',
         createTime: '',
-        viewCount: null,
     })
 
     const oldFrom = ref({})
@@ -152,7 +137,6 @@
         title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
         keywords: [{ required: true, message: '请输入关键字', trigger: 'blur' }],
         description: [{ required: true, message: '请输入描述', trigger: 'blur' }],
-        viewCount: [{ type: 'number', message: '请输入正确的浏览量' }],
         typeId: [{ required: true, message: '请选择类型', trigger: 'blur' }],
         picture: [{ required: true, validator: checkPicture, trigger: 'blur' }],
     })
@@ -265,9 +249,7 @@
             description: '',
             content: '',
             typeId: null,
-            isHot: '0',
             createTime: '',
-            viewCount: null,
         }
         nextTick(() => {
             ruleFormRef.value?.clearValidate()

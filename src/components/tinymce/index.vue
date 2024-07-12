@@ -44,6 +44,10 @@
                 return ''
             },
         },
+        height: {
+            type: Number,
+            default: 600,
+        },
         baseUrl: {
             type: String,
             default: '',
@@ -81,7 +85,7 @@
         language: 'zh_CN',
         skin_url: '/tinymce/skins/ui/oxide', // skin路径，具体路径看自己的项目
         width: '100%',
-        height: 600,
+        height: props.height,
         branding: false, // 是否禁用“Powered by TinyMCE”
         promotion: false, //去掉 upgrade
         menubar: 'edit view insert format tools table',
