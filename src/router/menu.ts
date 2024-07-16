@@ -24,6 +24,36 @@ const MenuRouter: Array<RouteRecordRaw> = [
         },
     },
     {
+        path: 'video',
+        name: 'video',
+        component: () => import('@/views/video/video.vue'),
+        meta: {
+            title: '视频管理',
+            icon: 'ScaleToOriginal',
+            hidden: false,
+        },
+    },
+    {
+        path: 'team',
+        name: 'team',
+        component: () => import('@/views/team/team.vue'),
+        meta: {
+            title: '师资团队',
+            icon: 'ScaleToOriginal',
+            hidden: false,
+        },
+    },
+    {
+        path: 'environment',
+        name: 'environment',
+        component: () => import('@/views/environment/environment.vue'),
+        meta: {
+            title: '校园环境',
+            icon: 'ScaleToOriginal',
+            hidden: false,
+        },
+    },
+    {
         path: 'news',
         name: 'news',
         meta: {

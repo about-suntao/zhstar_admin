@@ -5,7 +5,7 @@ import router from '@/router'
 // 1、创建实例
 const service = axios.create({
     baseURL: config.baseUrl,
-    timeout: 20 * 1000,
+    timeout: 120 * 1000,
 })
 // 2.请求拦截器
 service.interceptors.request.use(
