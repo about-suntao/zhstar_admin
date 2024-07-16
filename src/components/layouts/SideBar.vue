@@ -84,11 +84,8 @@
         flex-direction: column;
         &-header {
             width: 100%;
-            padding: 31px 0;
+            padding: 51px 0 51px 20px;
             &-titleZn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 img {
                     width: 36px;
                     height: 33px;
@@ -108,13 +105,12 @@
                 font-size: 14px;
                 color: #ffffff;
                 line-height: 16px;
-                text-align: center;
             }
         }
         .el-menu-vertical-demo {
             flex: 1;
             color: white;
-            background: #5d6dea;
+            background: #fa6f69;
         }
         :deep(.el-sub-menu__title) {
             color: white;
@@ -136,9 +132,9 @@
             :hover {
                 background-color: transparent;
             }
-            background-color: #5d6dea;
+            background-color: #fa6f69;
             .el-menu-item {
-                background-color: #5d6dea;
+                background-color: #fa6f69;
                 padding-left: 60px;
                 span {
                     display: inline-block;
@@ -147,7 +143,7 @@
             }
         }
         .is-active {
-            background: linear-gradient(269deg, #d0d6ff 0%, #8996ff 100%);
+            background: linear-gradient(269deg, #ffdfe2 0%, #fa6f69 100%);
         }
     }
 </style>

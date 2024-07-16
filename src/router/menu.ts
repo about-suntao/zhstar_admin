@@ -3,18 +3,18 @@ import { RouteRecordRaw } from 'vue-router'
 // 根据当前路由生成菜单
 
 const MenuRouter: Array<RouteRecordRaw> = [
+    // {
+    //     path: '/',
+    //     name: 'dashboard',
+    //     component: () => import('@/views/dashboard/dashboard.vue'),
+    //     meta: {
+    //         title: '仪表盘',
+    //         icon: 'Odometer',
+    //         hidden: false,
+    //     },
+    // },
     {
         path: '/',
-        name: 'dashboard',
-        component: () => import('@/views/dashboard/dashboard.vue'),
-        meta: {
-            title: '仪表盘',
-            icon: 'Odometer',
-            hidden: false,
-        },
-    },
-    {
-        path: 'banner',
         name: 'banner',
         component: () => import('@/views/banner/banner.vue'),
         meta: {
@@ -29,7 +29,7 @@ const MenuRouter: Array<RouteRecordRaw> = [
         component: () => import('@/views/video/video.vue'),
         meta: {
             title: '视频管理',
-            icon: 'ScaleToOriginal',
+            icon: 'VideoCameraFilled',
             hidden: false,
         },
     },
@@ -39,7 +39,7 @@ const MenuRouter: Array<RouteRecordRaw> = [
         component: () => import('@/views/team/team.vue'),
         meta: {
             title: '师资团队',
-            icon: 'ScaleToOriginal',
+            icon: 'Trophy',
             hidden: false,
         },
     },
@@ -49,7 +49,7 @@ const MenuRouter: Array<RouteRecordRaw> = [
         component: () => import('@/views/environment/environment.vue'),
         meta: {
             title: '校园环境',
-            icon: 'ScaleToOriginal',
+            icon: 'School',
             hidden: false,
         },
     },

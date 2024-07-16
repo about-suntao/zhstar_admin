@@ -31,7 +31,7 @@
                 width: 240px;
                 padding: 0;
                 height: 100vh;
-                background: #5d6dea;
+                background: #fa6f69;
             }
 
             .el-main {

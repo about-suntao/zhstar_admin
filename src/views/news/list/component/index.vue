@@ -38,7 +38,7 @@
                     fontSize: '18PX',
                     fontWeight: 'Bold',
                     color: 'black',
-                    background: '#EEF4FF',
+                    background: '#FFDCDE',
                 }"
                 :cell-style="{ textAlign: 'center', fontWeight: '400' }"
                 border
@@ -270,6 +270,9 @@
             }
             :deep(.el-scrollbar__wrap) {
                 display: flex;
+            }
+            :deep(.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell) {
+                background: #fff7f7;
             }
         }
         .pagination {

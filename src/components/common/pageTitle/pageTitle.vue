@@ -19,7 +19,7 @@
             margin-right: 10px;
             width: 8px;
             height: 26px;
-            background: #5d6dea;
+            background: #fa6f69;
             border-radius: 0px 0px 0px 0px;
             opacity: 1;
         }
