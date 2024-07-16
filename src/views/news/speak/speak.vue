@@ -65,7 +65,7 @@
                     <el-form-item label="标题:" prop="title">
                         <el-input v-model="userForm.title" placeholder="请输入标题" />
                     </el-form-item>
-                    <el-form-item label="发布时间:" prop="content">
+                    <el-form-item label="讲话内容:" prop="content">
                         <Tinymce v-model="userForm.content" :height="400"></Tinymce>
                     </el-form-item>
                 </el-form>
