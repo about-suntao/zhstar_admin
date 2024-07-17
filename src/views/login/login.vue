@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div class="logo">
-            <img src="/src/assets/img/login/logo.png" alt="" />
+            <img src="https://icon-zhuhai.oss-cn-hangzhou.aliyuncs.com/2024/07/17/645_logo.webp" alt="" />
         </div>
         <div class="login_form">
             <div class="title">
