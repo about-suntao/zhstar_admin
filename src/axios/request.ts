@@ -28,19 +28,28 @@ service.interceptors.request.use(
     }
 )
 
+let isTokenExpired = false
+
+const errorList: any = {
+    10001: '身份验证失效，请重新登录',
+    10003: '身份过期,请重新登录',
+    10007: '您的账户已在其他设备登录，非本人操作请及时修改密码',
+}
+
 // 3.响应拦截器
 service.interceptors.response.use(
     (res) => {
         if (res.data?.code) {
-            if (res.data.code !== 200) {
+            if (errorList[res.data.code]) {
+                if (!isTokenExpired) {
+                    isTokenExpired = true
+                    ElMessage.error(errorList[res.data.code])
+                    router.replace('/login').then(() => {
+                        isTokenExpired = false
+                    })
+                }
+            } else if (res.data.code !== 200) {
                 ElMessage.error(res.data.message)
-            }
-            if (res.data.code === '10001') {
-                ElMessage.error('身份验证失效，请重新登录')
-                router.push({ path: 'login' }) //返回登录页
-            } else if (res.data.code === '10003') {
-                ElMessage.error('身份过期,请重新登录')
-                router.push({ path: 'login' }) //返回登录页
             }
             return res.data
         } else {
