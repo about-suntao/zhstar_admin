@@ -143,7 +143,7 @@ const MenuRouter: Array<RouteRecordRaw> = [
         component: () => import('@/views/apply/apply.vue'),
         meta: {
             title: '招生报名',
-            icon: 'School',
+            icon: 'WindPower',
             hidden: false,
         },
     },
