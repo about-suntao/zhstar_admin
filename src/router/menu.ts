@@ -34,14 +34,35 @@ const MenuRouter: Array<RouteRecordRaw> = [
         },
     },
     {
-        path: 'team',
-        name: 'team',
-        component: () => import('@/views/team/team.vue'),
+        path: 'education',
+        name: 'education',
         meta: {
-            title: '师资团队',
+            title: '教育教学',
             icon: 'Trophy',
             hidden: false,
         },
+        children: [
+            {
+                path: 'team',
+                name: 'team',
+                component: () => import('@/views/team/team.vue'),
+                meta: {
+                    title: '师资团队',
+                    icon: 'Trophy',
+                    hidden: false,
+                },
+            },
+            {
+                path: 'schedule',
+                name: 'schedule',
+                component: () => import('@/views/schedule/schedule.vue'),
+                meta: {
+                    title: '学校作息表',
+                    icon: 'Trophy',
+                    hidden: false,
+                },
+            },
+        ],
     },
     {
         path: 'environment',
@@ -115,6 +136,16 @@ const MenuRouter: Array<RouteRecordRaw> = [
                 },
             },
         ],
+    },
+    {
+        path: 'apply',
+        name: 'apply',
+        component: () => import('@/views/apply/apply.vue'),
+        meta: {
+            title: '招生报名',
+            icon: 'School',
+            hidden: false,
+        },
     },
     {
         path: 'admin',
