@@ -14,7 +14,7 @@
         </div>
         <el-dialog v-model="Popup" title="作息表" width="550">
             <div class="e_body">
-                <el-form :model="userForm" ref="ruleFormRef" :rules="rules" label-width="70">
+                <el-form :model="userForm" ref="ruleFormRef" label-width="70">
                     <el-form-item label="作息表:" prop="img">
                         <el-upload class="avatar-uploader" :show-file-list="false" :http-request="uploadPicture">
                             <img v-if="userForm.img" :src="userForm.img" class="avatar" alt="" />
